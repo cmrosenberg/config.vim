@@ -274,16 +274,17 @@ if executable("par")
 endif
 
 if executable("cscope")
+
     augroup filetype_c
         autocmd!
         autocmd FileType c :cs add cscope.out
     augroup END
-endif
 
-nnoremap  <leader>fc :cs find c <cword><CR>
-nnoremap  <leader>fd :cs find d <cword><CR>
-nnoremap  <leader>fg :cs find g <cword><CR>
-nnoremap  <leader>fi :cs find i <cword><CR>
+    nnoremap  <leader>fc :cs find c <cword><CR>
+    nnoremap  <leader>fd :cs find d <cword><CR>
+    nnoremap  <leader>fg :cs find g <cword><CR>
+    nnoremap  <leader>fi :cs find i <cword><CR>
+endif
 
 "Use space to open and close folds
 nnoremap <Space> za
