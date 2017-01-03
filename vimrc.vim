@@ -267,6 +267,8 @@ inoremap jk <esc>
 :nnoremap <leader>t o<Esc>"=strftime("%Y, Week %V, %A %B %d at %X %Z: ")<C-M>pA
 :nnoremap <leader>T O<Esc>"=strftime("%Y, Week %V, %A %B %d at %X %Z: ")<C-M>pA
 
+nnoremap <c-p> :FZF<cr>
+
 " Use par for nice formatting
 
 if executable("par")
