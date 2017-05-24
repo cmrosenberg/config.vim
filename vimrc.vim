@@ -242,6 +242,7 @@ set synmaxcol=120
 
 au BufEnter *.txt   set tw=79 | set formatoptions+=t
 au BufEnter *.tex   set tw=79 | set formatoptions+=t
+au BufEnter *.md   set tw=79 | set formatoptions+=t
 au BufEnter *.js   set shiftwidth=4
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
