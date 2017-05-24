@@ -9,6 +9,7 @@ Plug 'tomasr/molokai'
 Plug 'nanotech/jellybeans.vim'
 Plug 'vim-scripts/xoria256.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'jacoborus/tender.vim'
 
 "Awesomeness from Junegunn Choi
 Plug 'junegunn/goyo.vim'
@@ -28,8 +29,6 @@ Plug 'tpope/vim-tbone'
 
 Plug 'pangloss/vim-javascript'
 
-Plug 'scrooloose/syntastic'
-
 Plug 'lervag/vimtex'
 
 Plug 'wellle/targets.vim' "Provides aditional targets plugins
@@ -41,8 +40,13 @@ Plug 'vim-scripts/indentpython.vim'
 "https://github.com/rhysd/vim-grammarous
 "https://github.com/mhinz/vim-signify
 
-call plug#end()
+" R-related plugins
 
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-rmarkdown'
+Plug 'jalvesaq/nvim-r'
+
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       PLUGIN CONFIGURATION
