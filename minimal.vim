@@ -97,8 +97,6 @@ inoremap <C-U> <C-G>u<C-U>
 " vim:set ft=vim et sw=2:
 set list
 
-set hidden
-set nobackup
 
 let mapleader = ","
 let maplocalleader = ";"
@@ -109,20 +107,15 @@ nnoremap <leader>b :b#<cr>
 "Map jk to Escape for easier mode switching"
 inoremap jk <esc>
 
-" Use par for nice formatting
-if executable("par")
-    set formatprg=par
-endif
 
 set expandtab
-set noswapfile
 
 " Extremely crude mappings for timestamps.
 :nnoremap <leader>t o<Esc>"=strftime("%Y, Week %V, %A %B %d at %X %Z: ")<C-M>pA
 :nnoremap <leader>T O<Esc>"=strftime("%Y, Week %V, %A %B %d at %X %Z: ")<C-M>pA
 
 :function Protocolfile()
-       :execute ("edit " . $HOME . "/protocol/"  . strftime("%Y-%m-%d") . ".md")
+       :execute ("edit " . $HOME . "/lasting/write/protocol/"  . strftime("%Y-%m-%d") . ".md")
 :endfunction
 
 :function Stufffile()
@@ -134,3 +127,22 @@ set noswapfile
 
 :nnoremap <leader>p :call Protocolfile()<cr>
 :nnoremap <leader>s :call Stufffile()<cr>
+
+set hidden
+set list
+set noswapfile
+set nobackup
+
+
+if exists("&colorcolumn")
+    highlight ColorColumn ctermbg=red
+    call matchadd('ColorColumn', '\%81v', 100)
+endif
+
+if executable("par")
+    set formatprg=par
+endif
+
+au BufEnter *.txt   set tw=79 | set formatoptions+=t
+au BufEnter *.tex   set tw=79 | set formatoptions+=t
+au BufEnter *.md   set tw=79 | set formatoptions+=t
