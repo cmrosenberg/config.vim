@@ -133,6 +133,11 @@ set list
 set noswapfile
 set nobackup
 
+set statusline=%<%f\ \| "Show filename relative to working directory
+set statusline+=\ %{''.(&fenc!=''?&fenc:&enc).''}\ \|      "Encoding
+set statusline+=\ %{&ff}\                              "FileFormat (dos/unix..)
+set statusline+=\%h%m%r%=%-14.(%l,%c%V%)\ %P "Rest of the standard options
+
 
 if exists("&colorcolumn")
     highlight ColorColumn ctermbg=red
@@ -146,3 +151,19 @@ endif
 au BufEnter *.txt   set tw=79 | set formatoptions+=t
 au BufEnter *.tex   set tw=79 | set formatoptions+=t
 au BufEnter *.md   set tw=79 | set formatoptions+=t
+
+au BufEnter *.go set nosmarttab | set noexpandtab | set nolist
+au BufEnter *.go nnoremap <leader>f :%!gofmt<cr>
+
+au BufEnter *.py nnoremap <leader>f :%!black -q -<cr>
+
+if has('persistent_undo')
+        " From https://alok.github.io/2018/10/17/underrated-vim-option-undofile-and-undodir/
+    silent !mkdir -p ~/.local/share/vim/undo > /dev/null 2>&1
+    set undodir=~/.local/share/vim/undo
+    set undofile
+endif
+
+set showcmd
+
+colo desert
