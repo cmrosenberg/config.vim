@@ -114,19 +114,17 @@ set expandtab
 :nnoremap <leader>t o<Esc>"=strftime("%Y, Week %V, %A %B %d at %X %Z: ")<C-M>pA
 :nnoremap <leader>T O<Esc>"=strftime("%Y, Week %V, %A %B %d at %X %Z: ")<C-M>pA
 
+" Interact with system clipboard
+:nnoremap <leader>p "+p
+:vnoremap <leader>p "+p
+:nnoremap <leader>y "+y
+:vnoremap <leader>y "+y
+
 :function Protocolfile()
        :execute ("edit " . $HOME . "/lasting/write/protocol/"  . strftime("%Y-%m-%d") . ".md")
 :endfunction
 
-:function Stufffile()
-       :execute ("edit " . $HOME . "/lasting/stuff.txt")
-:endfunction
-
-:inoremap jk <esc>
-
-
-:nnoremap <leader>p :call Protocolfile()<cr>
-:nnoremap <leader>s :call Stufffile()<cr>
+:nnoremap <leader>o :call Protocolfile()<cr>
 
 set hidden
 set list
@@ -148,14 +146,22 @@ if executable("par")
     set formatprg=par
 endif
 
+nnoremap <leader>c :close<cr>
+nnoremap <leader><cr> <c-]>
+
+" Turn off increment/decrement features
+nnoremap <c-a> <Nop>
+nnoremap <c-x> <Nop>
+
 au BufEnter *.txt   set tw=79 | set formatoptions+=t
-au BufEnter *.tex   set tw=79 | set formatoptions+=t
 au BufEnter *.md   set tw=79 | set formatoptions+=t
 
 au BufEnter *.go set nosmarttab | set noexpandtab | set nolist
 au BufEnter *.go nnoremap <leader>f :%!gofmt<cr>
 
 au BufEnter *.py nnoremap <leader>f :%!black -q -<cr>
+
+au BufEnter *.tex setlocal wrap linebreak number
 
 if has('persistent_undo')
         " From https://alok.github.io/2018/10/17/underrated-vim-option-undofile-and-undodir/
