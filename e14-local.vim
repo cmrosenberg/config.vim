@@ -3,22 +3,23 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-rooter'
-Plug 'junegunn/seoul256.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'leafgarland/typescript-vim'
-Plug 'vim-scripts/xoria256.vim'
+Plug 'dag/vim-fish'
 Plug 'dracula/vim', {'as': 'dracula'}
-Plug 'wellle/targets.vim'
-Plug 'sjl/badwolf'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/seoul256.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier', {
         \ 'do': 'yarn install',
         \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+Plug 'sjl/badwolf'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-scripts/xoria256.vim'
+Plug 'wellle/targets.vim'
 
 call plug#end()
 
