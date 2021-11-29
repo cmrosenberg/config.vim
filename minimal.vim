@@ -121,10 +121,15 @@ set expandtab
 :vnoremap <leader>y "+y
 
 :function Protocolfile()
-       :execute ("edit " . $HOME . "/lasting/write/protocol/"  . strftime("%Y-%m-%d") . ".md")
+       :execute ("edit " . $HOME . "/protocol/"  . strftime("%Y-%m-%d") . ".md")
+:endfunction
+
+:function Questionfile()
+       :execute ("edit " . $HOME . "/protocol/"  . "questions.md")
 :endfunction
 
 :nnoremap <leader>o :call Protocolfile()<cr>
+:nnoremap <leader>q :call Questionfile()<cr>
 
 set hidden
 set list
@@ -157,9 +162,7 @@ au BufEnter *.txt   set tw=79 | set formatoptions+=t
 au BufEnter *.md   set tw=79 | set formatoptions+=t
 
 au BufEnter *.go set nosmarttab | set noexpandtab | set nolist
-au BufEnter *.go nnoremap <leader>f :%!gofmt<cr>
 
-au BufEnter *.py nnoremap <leader>f :%!black -q -<cr>
 
 au BufEnter *.tex setlocal wrap linebreak number
 
@@ -172,4 +175,6 @@ endif
 
 set showcmd
 
-colo desert
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
