@@ -3,6 +3,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-rooter'
+Plug 'cespare/vim-toml', { 'branch': 'main' }
 Plug 'dag/vim-fish'
 Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'junegunn/fzf'
@@ -14,6 +15,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'prettier/vim-prettier', {
         \ 'do': 'yarn install',
         \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+Plug 'rust-lang/rust.vim'
 Plug 'sjl/badwolf'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
