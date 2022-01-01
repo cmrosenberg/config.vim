@@ -163,6 +163,8 @@ au BufEnter *.md   set tw=79 | set formatoptions+=t
 
 au BufEnter *.go set nosmarttab | set noexpandtab | set nolist
 
+au BufEnter Vagrantfile set ft=ruby
+
 
 au BufEnter *.tex setlocal wrap linebreak number
 
