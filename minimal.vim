@@ -124,11 +124,22 @@ set expandtab
        :execute ("edit " . $HOME . "/protocol/"  . strftime("%Y-%m-%d") . ".md")
 :endfunction
 
+:function VSplitProtocolfile()
+       :execute ("vsplit " . $HOME . "/protocol/"  . strftime("%Y-%m-%d") . ".md")
+:endfunction
+
+:function SplitProtocolfile()
+       :execute ("split " . $HOME . "/protocol/"  . strftime("%Y-%m-%d") . ".md")
+:endfunction
+
 :function Questionfile()
        :execute ("edit " . $HOME . "/protocol/"  . "questions.md")
 :endfunction
 
 :nnoremap <leader>o :call Protocolfile()<cr>
+:nnoremap <localleader>o :call SplitProtocolfile()<cr>
+:nnoremap <leader>O :call VSplitProtocolfile()<cr>
+
 :nnoremap <leader>q :call Questionfile()<cr>
 
 set hidden

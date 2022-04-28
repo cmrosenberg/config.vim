@@ -44,3 +44,19 @@ nnoremap <leader>s :Rg<cr>
 nnoremap <leader>f :Files<cr>
 nnoremap <localleader>l :Buffers<cr>
 nnoremap <localleader>g :BCommits<cr>
+
+set splitright
+
+if exists('+termguicolors')
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+
+"Check for changes to file when entering buffer change
+au BufEnter * :checktime
+
+"Check for changes to file if cursor has been inactive for 750 ms
+set updatetime=750
+au CursorHold,CursorHoldI * :checktime
