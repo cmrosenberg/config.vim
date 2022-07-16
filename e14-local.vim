@@ -9,6 +9,7 @@ Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/gv.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
@@ -22,6 +23,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-scripts/xoria256.vim'
 Plug 'wellle/targets.vim'
+
 
 call plug#end()
 
